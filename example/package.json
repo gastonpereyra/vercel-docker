@@ -1,0 +1,32 @@
+{
+  "name": "example-service",
+  "version": "1.0.0",
+  "description": "Some Example",
+  "main": "index.js",
+  "scripts": {
+    // Your scripts here
+    "deploy": "vercel --prod",
+    "start-docker": "vercel dev --listen $SERVICE_PORT --token $VERCEL_TOKEN"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YOUR-USER/example-service.git"
+  },
+  "keywords": [
+    "service",
+    "vercel"
+  ],
+  "author": "YOU",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YOUR-USER/example-service/issues/new?labels=bug&template=bug.md&title=[BUG]"
+  },
+  "homepage": "https://github.com/YOUR-USER/example-service#readme",
+  "devDependencies": {
+    // Your dependencies here
+    "vercel": "^23.1.2"
+  },
+  "dependencies": {
+    // Your dependencies here
+  }
+}
