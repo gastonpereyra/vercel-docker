@@ -1,0 +1,38 @@
+version: '3.3'
+
+# TO HAVE EVERY SERVICE CONNECTED IN LOCAL / PARA TENER CONECTADOS TODOS LOS SERVICIOS EN LOCAL
+networks:
+  your-network: 
+    external: true
+
+services:
+  vercel-service:
+    container_name: example-service # SOME NAME YOU WANT / ALGUN NOMBRE
+    image: node:14-alpine
+    working_dir: /some/working/dir  # RECOMEND TO SET A WORKING DIR / UNA RECOMENDACIÓN ES PONER UN WOKRKING DIR
+    volumes:
+      - .:/root/your/project # LINK YOUR PROJECT IN CONTAINER / LINKEA TU PROYECTO AL CONTAINER
+    environment:  
+      - SERVICE_PORT=4500 # PORT FOR YOUR PROJECT / PUERTO DEL PROYECTO
+      # TOKEN must be in .env file / TOKEN   debe estar en el archivo .env
+      - VERCEL_TOKEN=${VERCEL_TOKEN}
+    ports:
+      - "4500:4500"
+    networks:
+      your-network:
+        aliases:
+          - example.service.localhost
+
+    command: "npm run start-docker"
+
+   mongo:
+    container_name: example-mongo
+    image: mongo:4.6
+    volumes:
+      - ~/.mongo/example-data:/data/db # DATABASE STORE DATA
+    ports:
+      - "45000:27017" # FOR HAVING MULTIPLE DATABASE
+    networks:
+      your-network:
+        aliases:
+          - example-mongo.service.localhost
