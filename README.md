@@ -42,5 +42,5 @@ Also Works with everyelse.. incluiding to keep the Token in Secret.
 
 So, with Docker, we can have serveral "services", with differents tokens (for different accounts), and several differents ports, with databases (or whatever we need).. and develop in Vercel.
 
-To see more, look en [`/example`]('./example/') folder.
+To see more, look en [`/example`]('https://github.com/gastonpereyra/vercel-docker/tree/main/example') folder.
 
