@@ -34,7 +34,13 @@ Well, if you are in a team and don't want or cannot paid for a Team account, or 
 
 > ❔ **What happened if you have different dependencies, like databases?**
 
+## Solution
+
 Docker is a great in this cases, write a docker-compose file, add every service necesary, like Mongodb, and develop it.
 
 Also Works with everyelse.. incluiding to keep the Token in Secret.
+
+So, with Docker, we can have serveral "services", with differents tokens (for different accounts), and several differents ports, with databases (or whatever we need).. and develop in Vercel.
+
+To see more, look en [`/example`]('./example/') folder.
 
